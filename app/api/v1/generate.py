@@ -28,10 +28,10 @@ class I2VUrlRequest(BaseModel):
     enhance_prompt: bool = True
 
 class I2VJsonRequest(BaseModel):
+    file: str | None = None
     prompt: str | None = None
     duration: int = Field(5, ge=1, le=10)
     enhance_prompt: bool = True
-    file: str | None = None
 
 def drop_empty(v):
     if isinstance(v, dict):
